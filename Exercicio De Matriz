@@ -1,0 +1,372 @@
+Exe 1.
+#include <stdio.h>
+
+int main()
+{
+    int l, c, s=0;
+    int m[4][4];
+    
+    for(l=0;l<=3;l++){
+        printf("Digite quatro numeros: \n");
+        for(c=0;c<=3;c++){
+            scanf("%d", &m[l][c]);
+        }
+    }
+    for(l=0;l<=3;l++){
+        for(c=0;c<=3;c++){
+            printf("%d ", m[l][c]);
+        }
+        printf("\n");
+    }
+    for(l=0;l<=3;l++){
+        for(c=0;c<=3;c++){
+            if(m[l][c]>=10){
+                s++;
+                printf("%d", m[l][c]);
+                printf("\n");
+            }
+        }
+    }
+    printf("\n Essa Matriz Tem %d numeros maiores ou iguais a 10", s);
+
+    
+    return 0;
+}
+
+Exe 2.
+#include <stdio.h>
+
+int main()
+{
+    int m[5][5];
+    int l, c;
+    for(l=0; l<=4; l++){
+        for(c=0; c<=4; c++){
+            if(l != c ){
+                m[l][c] = 0;
+            }
+            if(l == c){
+                m[l][c] = 1;
+            }
+            printf("%d", m[l][c]);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
+
+Exe 3.
+
+#include <stdio.h>
+
+int main()
+{
+    int m[4][4];
+    int l, c, s;
+    for(l=0; l<=3; l++){
+        for(c=0; c<=3; c++){
+            s = l * c;
+            printf("%d", s);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
+
+Exe 4.
+
+#include <stdio.h>
+
+int main()
+{
+    int l, c, s=0;
+    int m[4][4];
+    
+    for(l=0;l<=3;l++){
+        printf("Digite quatro numeros: \n");
+        for(c=0;c<=3;c++){
+            scanf("%d", &m[l][c]);
+        }
+    }
+
+    for(l=0;l<=3;l++){
+        for(c=0;c<=3;c++){
+            if(m[l][c]>=s){
+                s = m[l][c];
+            }
+        }
+    }
+    printf("O maior numero e %d", s);
+
+    
+    return 0;
+}
+
+Exe 5.
+
+#include <stdio.h>
+
+int main()
+{
+    int m[5][5];
+    int l, c, x, controle = 0;
+    for(l=0; l<=4; l++){
+        printf("Digite cinco numeros: \n");
+        for(c=0; c<=4; c++){
+            scanf("%d", &m[l][c]);
+        }
+        
+    }
+    for(l=0;l<=4;l++){
+        for(c=4;c<=4;c++){
+            printf("%d ", m[l][c]);
+        }
+        printf("\n");
+    }
+    for(l=0;l<=4;l++){
+        for(c=0;c<=4;c++){
+            printf("%d ", m[l][c]);
+        }
+        printf("\n");
+    }
+    printf("Encontrar o valor: \n");
+    scanf("%d", &x);
+    for(l=0; l<=4; l++){
+        for(c=0; c<=4; c++){
+            if(x == m[l][c]){
+                printf("O valor %d A linha e %d e a coluna e %d", x, l, c);
+                controle++;
+            }
+        }
+        
+    }
+    if(controle == 0){
+        printf("Valor não encontrado");
+    }
+    
+    return 0;
+}
+
+
+Exe 6.
+
+#include <stdio.h>
+
+int main()
+{
+    int m[4][4];
+    int l, c;
+    
+    /* Matriz 2 */
+    int matriz[4][4];
+    int linha, coluna;
+    
+    /*Matriz 3*/
+    int matriz3[4][4];
+    int matriz4[4][4];
+    int matriz5[4][4];
+    
+    for(l=0; l<=3; l++){
+        printf("Escolha os numeros para a 1 Matriz, linha %d\n", l);
+        for(c=0; c<=3; c++){
+            scanf("%d", &m[l][c]);
+        }
+    }
+    printf("\n");
+    for(l=0; l<=3; l++){
+        for(c=0; c<=3; c++){
+            printf("%d ", m[l][c]);
+        }
+        printf("\n");
+    }
+    
+    /*Le o maior numero da Matriz 1*/
+    
+    for(l=0; l<=3; l++){
+        for(c=0; c<=3; c++){
+            matriz3[l][c] = m[l][c];
+        }
+    }
+
+    printf("\n");
+    
+    /*Matriz 2*/
+    
+    for(l=0; l<=3; l++){
+        printf("Escolha os numeros para a 2 Matriz, linha %d\n", l);
+        for(c=0; c<=3; c++){
+            scanf("%d", &matriz[l][c]);
+        }
+    }
+    printf("\n");
+    for(l=0; l<=3; l++){
+        for(c=0; c<=3; c++){
+            printf("%d ", matriz[l][c]);
+        }
+        printf("\n");
+    }
+    
+    /*Le o maior numero da Matriz 2*/
+    
+    for(l=0; l<=3; l++){
+        for(c=0; c<=3; c++){
+            matriz4[l][c] = matriz[l][c];
+        }
+    }
+    
+    /*Ecreve a Matiz 3*/
+    
+    for(l=0; l<=3; l++){
+        for(c=0; c<=3; c++){
+            if(matriz3[l][c] >= matriz4[l][c]) {
+                matriz5[l][c] = matriz3[l][c];
+            }
+            else{
+                matriz5[l][c] = matriz4[l][c];
+            }
+        }
+    }
+    printf("\n\n");
+    printf("Matiz apenas com os maiores numeros:\n");
+    for(l=0; l<=3; l++){
+        for(c=0; c<=3; c++){
+            printf("%d ", matriz5[l][c]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+Exe 7.
+
+#include <stdio.h>
+
+int main()
+{   
+    int m[10][10];
+    int i, j, conta;
+    
+    for(i=0; i<=9; i++){
+        for(j=0; j<=9; j++){
+            if(i<j){
+                m[i][j] = 2*i + 7*j - 2;
+            }
+            else if(i == j){
+                m[i][j] = 3*(i*i) - 1;
+            }
+            else{
+                m[i][j] = 4*(i*i*i) - 5*(j*j) + 1;
+            }
+        }
+    }
+    for(i=0; i<=9; i++){
+        for(j=0;j<=9;j++){
+            printf("%d ", m[i][j]);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
+
+Exe 8.
+
+#include <stdio.h>
+
+int main()
+{   
+    int m[3][3];
+    int l, c, s = 0, v = 0;
+    
+    for(l=0; l<=2; l++){
+        printf("Escolha 3 numeros para a linha %d\n", l);
+        for(c=0; c<=2; c++){
+            scanf("%d", &m[l][c]);
+        }
+    }
+    
+    printf("\n");
+    
+    for(l=0; l<=2; l++){
+        for(c=0; c<=2; c++){
+            if(c>l){
+                s += m[l][c];
+            }
+            printf("%d", m[l][c]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+    printf("O valor da soma dos numeros a cima da diagonal principal e:\n %d ", s);
+    
+    return 0;
+}
+
+Exe 9.
+
+#include <stdio.h>
+
+int main()
+{   
+    int m[3][3];
+    int l, c, s = 0, v = 0;
+    
+    for(l=0; l<=2; l++){
+        printf("Escolha 3 numeros para a linha %d\n", l);
+        for(c=0; c<=2; c++){
+            scanf("%d", &m[l][c]);
+        }
+    }
+    
+    printf("\n");
+    
+    for(l=0; l<=2; l++){
+        for(c=0; c<=2; c++){
+            if(c<l){
+                s += m[l][c];
+            }
+            printf("%d", m[l][c]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+    printf("O valor da soma dos numeros a cima da diagonal principal e:\n %d ", s);
+    
+    return 0;
+}
+
+Exe 10.
+
+#include <stdio.h>
+
+int main()
+{   
+    int m[3][3];
+    int l, c, s = 0, v = 0;
+    
+    for(l=0; l<=2; l++){
+        printf("Escolha 3 numeros para a linha %d\n", l);
+        for(c=0; c<=2; c++){
+            scanf("%d", &m[l][c]);
+        }
+    }
+    
+    printf("\n");
+    
+    for(l=0; l<=2; l++){
+        for(c=0; c<=2; c++){
+            if(c == l){
+                s += m[l][c];
+            }
+            printf("%d", m[l][c]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+    printf("O valor da soma dos numeros a cima da diagonal principal e:\n %d ", s);
+    
+    return 0;
+}
+
